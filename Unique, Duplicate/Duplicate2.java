@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class Duplicate2{
+	String[] names = new String[5];
+	
+	public int checkDuplicate(String text){
+		
+		String word = text;
+		
+		for(int i = 0; i < names.length; i++){
+			if(word.equalsIgnoreCase(names[i])){
+				return 1;
+			}
+			
+		}
+		return 0;
+		
+	}
+	
+	public void addNames(){
+		for (int j = 0; j < names.length; j++){
+			names[j] = " ";
+		}
+
+		
+		Scanner sc = new Scanner(System.in);
+		for (int i = 0; i < names.length; i++){
+			String entry = " ";
+			while(true){
+				System.out.println("Write " + (i + 1) + " student name");
+				entry = sc.next();
+				int checkdu = checkDuplicate(entry);
+				if(checkdu == 1){
+					System.out.println("Duplicate Entry Write unique value");
+					continue;
+				}
+				if (checkdu == 0){
+					break;
+				}
+			}
+			
+			names[i] = entry;
+		}
+	}
+	
+	public void displayNames(){
+		for(String name: names){
+			System.out.println(name);
+		}
+	}
+	
+	
+	
+	public static void main(String[] args){
+		Duplicate objDuplicate = new Duplicate();
+		objDuplicate.addNames();
+		objDuplicate.displayNames();
+		
+	}
+	
+}

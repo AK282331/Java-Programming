@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+class Students{
+	String Name;
+	int Age;
+	String Gender;
+	
+	Students(String name, int age, String gender){
+		this.Name = name;
+		this.Age = age;
+		this.Gender = gender;
+	}
+	
+	void display(){
+		System.out.print(Name + "\t" + Age + "\t" + Gender);
+	}
+	
+	
+}
+
+public class ObjectArray{
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		Students[] student = new Students[2];
+		for (int i = 0; i < 2; i++){
+			System.out.println("Write " + (i + 1) + " student name");
+			String name = sc.next();
+			System.out.println("Write " + (i + 1) + " student gender");
+			String gender = sc.next();
+			System.out.println("Write " + (i + 1) + " student age");
+			int age = sc.nextInt();
+			student[i] = new Students(name,age,gender);
+			
+		}
+		
+		
+		
+		for (Students stud : student){
+			student[j].display();
+			stud.display();
+		}
+	}
+	
+	
+}

@@ -1,0 +1,72 @@
+import java.util.Scanner;
+
+public class game{
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		while (true){
+			System.out.println("Do you go 'left' or 'right'? , enter 1 for Left and 2 for right?");
+			int start = sc.nextInt();
+			if (start == 1){
+				System.out.println("There is a rushing river. Do you 'swim' or 'build a bridge'? enter 1 for swim and 2 for bridge");
+				int stage1 = sc.nextInt();
+				if (stage1 == 1){
+					System.out.println("The river is strong. Are you a 'strong swimmer' or a 'weak swimmer'? 1 for weak, 2 for strong");
+					int stage2 = sc.nextInt();
+						if (stage2 == 1){
+							System.out.println("You are swept downstream and lose time. You lost the game");
+					
+						} 
+						else if (stage2 == 2){
+							System.out.println("You crossed the river safely. You won the game");
+						} 
+						else {
+							System.out.println("You are not even able to take a proper decision. Exit from game");
+							}
+			} 
+				else if(stage1 == 2){
+					System.out.println("You successfully cross the river. You won the game");
+				
+									} 
+				else{
+					System.out.println("You are not even able to take a proper decision. Exit from game");
+					}
+			
+		} 
+		else if (start == 2){
+			System.out.println("You enter a dark forest. Do you 'light a torch' or 'proceed in darkness'? 1 - torch, 2 - walk in dark");
+			int stage1 = sc.nextInt();
+			if (stage1 == 1){
+				System.out.println("You see a path ahead. Do you 'follow - 1' or 'return - 2'?");
+				int stage2 = sc.nextInt();
+				if (stage2 == 1){
+					System.out.println("You find a hidden village.");	
+				}
+				else if (stage2 == 2){
+					System.out.println("You failed");
+				}
+				else{
+					System.out.println("You are not even able to take a proper decision. Exit from game");
+				}
+			}
+			else if (stage1 == 2){
+				System.out.println("You stumble and lose your way. Failed in the game");
+			}
+			else {
+				System.out.println("You are not even able to take a proper decision. Exit from game");
+				
+			}
+		} 
+		else {
+			System.out.println("You are not even able to take a proper decision. Exit from game");
+			break;
+			
+		}
+		System.out.println("Do you want to continue the game? Yes - 1, No - 2");
+		int end = sc.nextInt();
+		if (end == 2){
+			break;
+		}
+	}
+		}
+		
+}
